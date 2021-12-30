@@ -1,0 +1,20 @@
+- name: configure webserver
+  hosts: all
+  tasks:
+  - name: install package
+    yum:
+     name: httpd
+     state: present
+  - name: copy website
+    copy:
+     content: "Hello world! this is from ansibel to jenkins"
+     dest: /var/www/html/index.html
+  - name: restart services
+    service:
+     name: httpd
+     state: restarted
+     enabled: yes
+  - name: create user
+    user:
+     name: gaurav
+     state: present
