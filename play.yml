@@ -7,7 +7,7 @@
      state: present
   - name: copy website
     copy:
-     content: "Hello world! this is from ansibel to jenkins"
+     content: "Hello!!!!! world! this is from ansibel to jenkins"
      dest: /var/www/html/index.html
   - name: restart services
     service:
